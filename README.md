@@ -1,6 +1,5 @@
-# AccuKnox eBPF Assignment (Minimal Setup)
+# AccuKnox eBPF Assignment 
 
-This repository contains clean, humanized, and highly-simplified eBPF solutions in Go and C.
 
 ## 🛠️ Requirements & Dependencies
 Install dependencies on Ubuntu 20.04/22.04+:
