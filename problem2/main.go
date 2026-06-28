@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/cilium/ebpf"
 	"github.com/cilium/ebpf/link"
@@ -42,5 +44,10 @@ func main() {
 	defer lBind.Close()
 
 	fmt.Printf("Policy active: Only port 4040 allowed for process '%s'. Ctrl+C to stop.\n", proc)
-	select {}
+
+	// Wait for termination signal
+	sig := make(chan os.Signal, 1)
+	signal.Notify(sig, os.Interrupt, syscall.SIGTERM)
+	<-sig
+	fmt.Println("Shutting down...")
 }

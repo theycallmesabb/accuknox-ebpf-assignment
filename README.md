@@ -9,8 +9,7 @@ sudo apt update && sudo apt install -y clang llvm libbpf-dev golang-go make curl
 ```
 
 ---
-
-## 🚀 Problem 1: Drop Packets on TCP Port (XDP)
+ Problem 1: Drop Packets on TCP Port (XDP)
 Drops incoming/outgoing packets on a configurable TCP port.
 
 ### Compile & Build
@@ -33,7 +32,7 @@ go build -o drop_port
 
 ---
 
-## 🚀 Problem 2: Allow Only Port 4040 for a Process (Cgroup)
+##  Problem 2: Allow Only Port 4040 for a Process (Cgroup)
 Allows traffic **only** on port `4040` for process named `myprocess`. Traffic to other ports is blocked.
 
 ### Compile & Build
@@ -68,7 +67,7 @@ go build -o process_filter
 
 ---
 
-## 🚀 Problem 3: Go Concurrency Code Explanation
+##  Problem 3: Go Concurrency Code Explanation
 Detailed explanation of Go channel structures, worker pools, concurrency mechanics, and race conditions.
 
 The full explanation is written in:

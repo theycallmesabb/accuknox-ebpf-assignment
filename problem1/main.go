@@ -5,7 +5,9 @@ import (
 	"log"
 	"net"
 	"os"
+	"os/signal"
 	"strconv"
+	"syscall"
 
 	"github.com/cilium/ebpf/link"
 	"github.com/cilium/ebpf/rlimit"
@@ -37,5 +39,10 @@ func main() {
 	_ = objs.ConfigMap.Update(&key, &val, 0)
 
 	fmt.Printf("XDP attached to %s. Dropping TCP port %d. Press Ctrl+C to stop.\n", ifaceName, portVal)
-	select {}
+	
+	// Wait for termination signal
+	sig := make(chan os.Signal, 1)
+	signal.Notify(sig, os.Interrupt, syscall.SIGTERM)
+	<-sig
+	fmt.Println("Shutting down...")
 }
