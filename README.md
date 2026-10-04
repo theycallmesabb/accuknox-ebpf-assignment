@@ -69,5 +69,5 @@ go build -o process_filter
 ##  Problem 3: Go Concurrency Code Explanation
 Detailed explanation of Go channel structures, worker pools, concurrency mechanics, and race conditions.
 
-The full explanation is written in:
-👉 **[problem3.md](file:///Users/sabyasacheethakur/Desktop/accuknox%20assignment/problem3.md)**
+The full execution is here
+👉 https://drive.google.com/drive/folders/12N9_WzNDUKgRgCyIA9-4xcJnlu96ppXJ?usp=drive_link
